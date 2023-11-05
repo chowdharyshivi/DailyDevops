@@ -2,6 +2,15 @@ name: check
 on: [push]
 
 jobs:
+
+  job_test0:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: pwsh
+        run: |
+            echo "101010101010101010"
+
+
   conditional_jobs_check_files:
     runs-on: ubuntu-latest
     outputs:
@@ -48,4 +57,18 @@ jobs:
         run: |
             echo "22222222222"
             echo "${needs.conditional_jobs_check_files.outputs.docs_changed2}"
+
+  job_test3:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: pwsh
+        run: |
+            echo "333333333"
+
+  job_test4:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: pwsh
+        run: |
+            echo "4444444444"
 
