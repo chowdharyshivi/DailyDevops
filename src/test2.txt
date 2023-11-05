@@ -2,3 +2,7 @@ HTTPS (Hypertext Transfer Protocol Secure) is a protocol for securely transmitti
 over the World Wide Web. It is used to encrypt data exchanged between a web server and a client,
  such as a web browser. HTTPS is designed to protect sensitive information, such as login credentials, 
  credit card details, and other personal information, from being intercepted
+HTTPS (Hypertext Transfer Protocol Secure) is a protocol for securely transmitting data 
+over the World Wide Web. It is used to encrypt data exchanged between a web server and a client,
+ such as a web browser. HTTPS is designed to protect sensitive information, such as login credentials, 
+ credit card details, and other personal information, from being intercepted
