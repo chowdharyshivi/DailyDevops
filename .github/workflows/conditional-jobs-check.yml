@@ -29,17 +29,6 @@ jobs:
         Write-Host "::set-output name=docs_changed2::$HasDiff2"
 
 
-
-  conditional_job_both:
-    runs-on: ubuntu-latest
-    needs: [ conditional_jobs_check_files ]
-    if: needs.conditional_jobs_check_files.outputs.docs_changed == 'true' && needs.conditional_jobs_check_files.outputs.docs_changed2 == 'true'
-    steps:
-      - shell: pwsh
-        run: |
-            echo "text file changed"
-            echo "${needs.conditional_jobs_check_files.outputs.docs_changed}"
-
   conditional_job_test1:
     runs-on: ubuntu-latest
     needs: [ conditional_jobs_check_files ]
@@ -47,9 +36,8 @@ jobs:
     steps:
       - shell: pwsh
         run: |
-            echo "text file changed"
+            echo "111111111"
             echo "${needs.conditional_jobs_check_files.outputs.docs_changed}"
-
 
   conditional_job_test2:
     runs-on: ubuntu-latest
@@ -58,6 +46,6 @@ jobs:
     steps:
       - shell: pwsh
         run: |
-            echo "text file not changed"
+            echo "22222222222"
             echo "${needs.conditional_jobs_check_files.outputs.docs_changed2}"
 
