@@ -50,8 +50,8 @@ jobs:
 
   conditional_job_test2:
     runs-on: ubuntu-latest
-    needs: [ conditional_jobs_check_files ]
-    if: needs.conditional_jobs_check_files.outputs.docs_changed2 == 'true'
+    needs: [ conditional_jobs_check_files, conditional_job_test1 ]
+    if: needs.conditional_jobs_check_files.outputs.docs_changed2 == 'true' || (needs.conditional_jobs_check_files.outputs.docs_changed == 'true' && needs.conditional_jobs_check_files.outputs.docs_changed2 == 'true' && success('conditional_job_test1'))
     steps:
       - shell: pwsh
         run: |
