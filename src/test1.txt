@@ -4,9 +4,6 @@ It is primarily used for remote access and command-line management of servers an
  in to remote systems, execute commands, and transfer files.
 
  
-SSH (Secure Shell) is a protocol for establishing a secure, encrypted connection between two computers. 
-It is primarily used for remote access and command-line management of servers and other computing systems.
- SSH provides a secure channel over an unsecured network, such as the internet, allowing users to securely log 
- in to remote systems, execute commands, and transfer files.
+
 
  
