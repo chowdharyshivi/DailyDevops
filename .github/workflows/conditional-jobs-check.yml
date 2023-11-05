@@ -25,8 +25,8 @@ jobs:
         $HasDiff2 = $SourceDiff2.Length -gt 0
 
         # Set the output named "docs_changed"
-        Write-Output "::set-output name=docs_changed1::$HasDiff1"
-        Write-Output "::set-output name=docs_changed2::$HasDiff2"
+        Write-Host "::set-output name=docs_changed1::$HasDiff1"
+        Write-Host "::set-output name=docs_changed2::$HasDiff2"
 
 
   conditional_job_test1:
