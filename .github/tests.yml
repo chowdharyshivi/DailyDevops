@@ -1,30 +1,30 @@
 name: Regression Tests
 
 on:
- workflow_dispatch:
-  inputs:
-    MainBranch:
-     description: 'Main Branch'
-     required: true
-     default: 'main-v2'
-    FeatureBranch:
-     description: 'Feature Branch'
-     required: true
-     default: 'preprod-v2'
-    BearerToken:
-     description: 'Bearer Token'
-     required: true               
-    TenantId:
-     description: 'Tenant Id'
-     required: true
-jobs: 
- EchoParameters:
-  runs-on: ubutu-latest
-  steps: 
-   - run: |
-        echo "Main Branch: ${{ github.event.input.MainBranch }}"    
-        echo "Feature Branch: ${{ github.event.inputs.FeatureBranch }}"
-        echo "Bearer Token: ${{ github.event.inputs.BearerToken }}"
-        echo "TenantId: ${{ github.event.inputs.TenantId }}"
+  workflow_dispatch:
+    inputs:
+      MainBranch:
+        description: 'Main Branch'
+        required: true
+        default: 'main-v2'
+      FeatureBranch:
+        description: 'Feature Branch'
+        required: true
+        default: 'preprod-v2'
+      BearerToken:
+        description: 'Bearer Token'
+        required: true
+      TenantId:
+        description: 'Tenant Id'
+        required: true
 
-            
+jobs:
+  EchoParameters:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo Parameters
+        run: |
+          echo "Main Branch: ${{ github.event.inputs.MainBranch }}"
+          echo "Feature Branch: ${{ github.event.inputs.FeatureBranch }}"
+          echo "Bearer Token: ${{ github.event.inputs.BearerToken }}"
+          echo "TenantId: ${{ github.event.inputs.TenantId }}"
