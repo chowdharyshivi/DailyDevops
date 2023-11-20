@@ -17,6 +17,7 @@ on:
       TenantId:
         description: 'Tenant Id'
         required: true
+        default: null
 
 jobs:
   EchoParameters:
