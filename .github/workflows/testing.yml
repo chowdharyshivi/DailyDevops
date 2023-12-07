@@ -3,7 +3,7 @@ name: test hotfix
 on:
   push:
     branches:
-      - main-v2
+      - main
 
 jobs:
   test-hotfix:
