@@ -26,4 +26,4 @@ jobs:
 
       - name: Echo message
         run: |
-          echo "yes / no"
+          echo "should be printed"
