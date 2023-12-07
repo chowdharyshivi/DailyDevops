@@ -18,12 +18,18 @@ jobs:
         run: |
           commit_message=$(git log -1 --pretty=%B)
           if [[ $commit_message == *"hotfix"* ]]; then
-            echo "Commit message contains 'hotfix'. Moving to the next step..."
+            echo "Commit message contains 'hotfix'. Notify via Slack."
+            echo "status=success" >> $GITHUB_ENV  # Set the environment variable
           else
-            echo "No action needed. Commit message does not contain 'hotfix'. Exiting job."
-            exit 1
+            echo "No action needed."
+            echo "status=fail" >> $GITHUB_ENV  # Set the environment variable
           fi
 
       - name: Echo message
         run: |
-          echo "should be printed"
+          if [[ $status == "success" ]]; then
+            echo "should be printed"
+          else
+            echo "Not printing message. Status is fail."
+            exit 1  # Exit with a non-zero code to indicate an error
+          fi
