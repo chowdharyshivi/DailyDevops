@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2 
-        
+
       - name: Check for "hotfix" in commit message
         run: |
           commit_message=$(git log -1 --pretty=%B)
@@ -21,7 +21,7 @@ jobs:
             echo "Commit message contains 'hotfix'. Moving to the next step..."
           else
             echo "No action needed. Commit message does not contain 'hotfix'. Exiting job."
-            exit 0
+            exit 1
           fi
 
       - name: Echo message
