@@ -23,4 +23,4 @@ jobs:
 
       - name: Echo message
         run: |
-          echo "yes"
+          echo "yes / no"
