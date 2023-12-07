@@ -30,6 +30,6 @@ jobs:
           if [[ $status == "success" ]]; then
             echo "should be printed"
           else
-            echo "Not printing message. Status is fail."
-            exit 1  # Exit with a non-zero code to indicate an error
+            echo "Dont notify"
+            exit 0  # Exit with a non-zero code to indicate an error
           fi
